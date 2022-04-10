@@ -19,7 +19,8 @@ class Person {
     }
     
     public String getName() {
-        return (lastName, firstName);
+        String fullName = (lastName + ", " + firstName );
+        return fullName;
     }
 }
 
@@ -42,13 +43,13 @@ class Student extends Person {
         return scores;
     }
     
-    public char calculateScores () {
+    public String calculateScores () {
         Scanner console = new Scanner (System.in);
         int numberOfTests = console.nextInt();
         int sum = 0;
-        int[] grade = new int[numerOfTests];
+        int[] grade = new int[numberOfTests];
         for (int i = 0; i < numberOfTests; i++) {
-            int grade[i] = console.nextInt()
+            grade[i] = console.nextInt();
         }
         for (int num : grade) {
             sum = sum + num;
@@ -56,18 +57,19 @@ class Student extends Person {
         int result = sum / numberOfTests ;
         if (result <= 100 && result >=90)
             return ("O"); 
-            else if (result < 90  && result >=80)
+        else if (result < 90  && result >=80)
             return ("E"); 
-            else if (result < 80  && result >=70)
+        else if (result < 80  && result >=70)
             return ("A"); 
-            else if (result < 70  && result >=55)
+        else if (result < 70  && result >=55)
             return ("P"); 
-            else if (result < 55  && result >=40)
+        else if (result < 55  && result >=40)
             return ("D");
-            else if (result < 40)
-            return ("T");  
-    }
+        else if (result < 40) 
+            return ("T");
+        else 
+            return null;
+                                    }
           
+}    
     
-    
-}
